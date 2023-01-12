@@ -7,11 +7,11 @@ from pyrogram.types import Message
 from pyrogram.errors import FloodWait
 import asyncio
 
-@app.on_message(filters.command("gban") & filters.user(OWNER))
-async def ban_globally(_, message):  
+@app.on_message(filters.command("mgban") & filters.user(OWNER))
+async def mban_globally(_, message):  
     if not message.reply_to_message:
         if len(message.command) < 2:
-            await message.reply_text("**usage:**\n\n/gban [username / user_id]")
+            await message.reply_text("**usage:**\n\n/mgban [username / user_id]")
             return
         user = message.text.split(None, 2)[1]
         if "@" in user:
@@ -43,7 +43,7 @@ async def ban_globally(_, message):
                 except Exception:
                     pass    
             ban_text = f"""
-🚷 **new global ban on veez mega**
+🚷 **new global ban on Hyper Robot**
 
 **Origin:** {message.chat.title} [`{message.chat.id}`]
 **Sudo User:** {from_user.mention}
@@ -89,7 +89,7 @@ async def ban_globally(_, message):
                 except Exception:
                     pass    
             ban_text = f"""
-🚷 **new global ban on veez mega**
+🚷 **new global ban on Hyper Robot**
 
 **Origin:** {message.chat.title} [`{message.chat.id}`]
 **Sudo User:** {from_user_mention}
@@ -104,11 +104,11 @@ async def ban_globally(_, message):
             return
                   
                   
-@app.on_message(filters.command("ungban") & filters.user(OWNER))
-async def unban_globally(_, message):            
+@app.on_message(filters.command("mungban") & filters.user(OWNER))
+async def munban_globally(_, message):            
     if not message.reply_to_message:
         if len(message.command) != 2:
-            await message.reply_text("**usage:**\n\n/ungban [username / user_id]")
+            await message.reply_text("**usage:**\n\n/mungban [username / user_id]")
             return
         user = message.text.split(None, 1)[1]
         if "@" in user:
