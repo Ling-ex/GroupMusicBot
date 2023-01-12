@@ -6,8 +6,8 @@ from Yukki.YukkiUtilities.database.chats import (get_served_chats, is_served_cha
 from ..YukkiUtilities.helpers.filters import command
 
 
-@app.on_message(filters.command("broadcast_pin") & filters.user(OWNER))
-async def broadcast_message_pin(_, message):
+@app.on_message(filters.command("gcast_pin") & filters.user(OWNER))
+async def gcast_message_pin(_, message):
     if not message.reply_to_message:
         pass
     else :
@@ -34,7 +34,7 @@ async def broadcast_message_pin(_, message):
         await message.reply_text(f"✅ **broadcasted message in {sent} chats\n\n📌 with {pin} pins.**")  
         return
     if len(message.command) < 2:
-        await message.reply_text("**usage**:\n/broadcast (message)")
+        await message.reply_text("**usage**:\n/gcast_pin (message)")
         return  
     text = message.text.split(None, 1)[1]
     sent = 0
@@ -58,8 +58,8 @@ async def broadcast_message_pin(_, message):
     await message.reply_text(f"✅ **broadcasted message in {sent} chats\n📌 with {pin} pins.**")
 
 
-@app.on_message(filters.command("broadcast") & filters.user(OWNER))
-async def broadcast_message_nopin(_, message):
+@app.on_message(filters.command("gcast") & filters.user(OWNER))
+async def gcast_message_nopin(_, message):
     if not message.reply_to_message:
         pass
     else:
@@ -81,7 +81,7 @@ async def broadcast_message_nopin(_, message):
         return
     if len(message.command) < 2:
         await message.reply_text(
-            "**usage**:\n/broadcast (message)"
+            "**usage**:\n/gcast (message)"
         )
         return
     text = message.text.split(None, 1)[1]
