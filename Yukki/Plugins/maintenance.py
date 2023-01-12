@@ -25,9 +25,9 @@ async def smex(_, message):
         await message.reply_text(usage)
 
         
-@Client.on_message(command("sptest") & filters.user(SUDOERS))
+@Client.on_message(command("mspeedtest") & filters.user(SUDOERS))
 async def sls_skfs(_, message):
-    usage = "**usage:**\n/speedtest [enable|disable]"
+    usage = "**usage:**\n/mspeedtest [enable|disable]"
     if len(message.command) != 2:
         return await message.reply_text(usage)
     chat_id = message.chat.id
