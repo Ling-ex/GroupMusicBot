@@ -52,7 +52,7 @@ async def load_start():
             pass     
     await app.send_message(LOG_GROUP_ID, "✅ client 2.0 started")
     await chacha.send_message(LOG_GROUP_ID, "✅ client 2.1 started")
-    print("[INFO]: VEEZ MEGA CLIENT STARTED")
+    print("[INFO]: HYPER CLIENT STARTED")
     
    
 loop = asyncio.get_event_loop()
@@ -61,7 +61,7 @@ run()
 idle()
 
 LOGS.info(
-    f"⚡ VEEZ MEGA ⚡ [SUCCESSFULLY ACTIVATED]")
+    f"⚡ HYPER ⚡ [SUCCESSFULLY ACTIVATED]")
 
 loop.close()
 print("[INFO] TURNED OFF BOT AND CLIENT")
