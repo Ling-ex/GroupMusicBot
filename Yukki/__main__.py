@@ -2,7 +2,6 @@ import time
 import uvloop
 import asyncio
 import importlib
-from pytgcalls import idle
 from pyrogram import Client
 from .YukkiUtilities.tgcallsrun import run
 from .config import API_ID, API_HASH, BOT_TOKEN, MONGO_DB_URI, SUDO_USERS, LOG_GROUP_ID
