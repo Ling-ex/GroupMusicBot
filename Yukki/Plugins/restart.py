@@ -31,17 +31,17 @@ async def restart_server(_, message):
         try:
             await app.send_message(
                 x,
-                f"veez mega server has just restarted.\n\nsorry for the issues, start playing after 15-20 seconds again.",
+                f"Hyper server has just restarted.\n\nsorry for the issues, start playing after 15-20 seconds again.",
             )
             await remove_active_chat(x)
         except Exception:
             pass
-    x = await message.reply_text(f"restarting veez mega bot.")
+    x = await message.reply_text(f"restarting Hyper Robot.")
     os.system(f"kill -9 {os.getpid()} && python3 -m Yukki")
 
 
-@app.on_message(filters.command("update") & filters.user(SUDOERS))
-async def update_bot(_, message):
+@app.on_message(filters.command("mupdate") & filters.user(SUDOERS))
+async def mupdate_bot(_, message):
     m = subprocess.check_output(["git", "pull"]).decode("UTF-8")
     if str(m[0]) != "A":
         x = await message.reply_text("update found, pushing now !")
@@ -50,8 +50,8 @@ async def update_bot(_, message):
         await message.reply_text("bot is already up-to-date")
 
 
-@app.on_message(filters.command("activevc") & filters.user(SUDOERS))
-async def activevc(_, message: Message):
+@app.on_message(filters.command("os") & filters.user(SUDOERS))
+async def os(_, message: Message):
     served_chats = []
     try:
         chats = await get_active_chats()
@@ -78,7 +78,7 @@ async def activevc(_, message: Message):
         await message.reply_text("❌ no active voice chats")
     else:
         await message.reply_text(
-            f"💡 **Active voice chats:**\n\n{text}",
+            f"💡 **•Active voice chats:**\n\n{text}",
             disable_web_page_preview=True,
         )
 
