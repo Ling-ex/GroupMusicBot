@@ -18,7 +18,7 @@ from ..YukkiUtilities.helpers.time import get_readable_time
 from Yukki import app, SUDOERS, YUKKI_START_TIME
 
 
-@app.on_message(command("stats") & filters.user(SUDOERS))
+@app.on_message(command("mstats") & filters.user(SUDOERS))
 async def gstats(_, message):
     m = await message.reply_text("🔄 **Getting bot stats...**\n\n» please wait for some time.")
     served_chats = []
@@ -48,7 +48,7 @@ async def gstats(_, message):
     free = (hdd.free / (1024.0 ** 3))
     free = str(free)
     msg = f"""
-📊 **Global stats of veez mega bot**:\n
+📊 **Global stats of Hyper Robot**:\n
 ⩥ **System Stats:**\n
 **Uptime:** {uptime}
 **System Proc:** Online
