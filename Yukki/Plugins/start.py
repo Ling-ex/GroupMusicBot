@@ -84,7 +84,7 @@ async def mstart(_, message: Message):
     await message.reply_text(f"✨ Hello {message.from_user.mention}, i'm a Hyper Robot.\n\n💭 Make me admin in your group so I can play music, otherwise you can't use my service.", reply_markup=InlineKeyboardMarkup(out[1]))
     return
         
-@Client.on_message(filters.private & filters.incoming & filters.command("mstart"))
+@Client.on_message(filters.private & filters.incoming & filters.command("start"))
 async def play(_, message: Message):
     if len(message.command) == 1:
         user_id = message.from_user.id
