@@ -74,8 +74,8 @@ async def welcome(_, message: Message):
         except:
             return
 
-@Client.on_message(filters.group & filters.command(["mstart", "mhelp"]))
-async def mstart(_, message: Message):
+@Client.on_message(filters.group & filters.command(["start", "help"]))
+async def start(_, message: Message):
     chat_id = message.chat.id
     if not await is_served_chat(chat_id):
         await message.reply_text(f"❌ **not in allowed chat**\n\nHyper Robot is only for allowed chats, ask any sudo user to allow your chat.\n\ncheck sudo user list [From Here](https://t.me/{BOT_USERNAME}?start=sudolist)")
