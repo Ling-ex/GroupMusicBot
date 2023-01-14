@@ -63,7 +63,7 @@ async def delmyplaylist(_, message):
     else:
          _playlist = await get_note_names(message.from_user.id)
     if not _playlist:
-        await message.reply_text("you have no playlist on veez mega database !")
+        await message.reply_text("you have no playlist on Hyper Robot database !")
     else:
         titlex = []
         j = 0
@@ -98,7 +98,7 @@ async def delchatplaylist(_, message):
     else:
          _playlist = await get_note_names(message.chat.id)
     if not _playlist:
-        await message.reply_text("Group's has no playlist on veez mega database.")
+        await message.reply_text("Group's has no playlist on Hyper Robot database.")
     else:
         titlex = []
         j = 0
