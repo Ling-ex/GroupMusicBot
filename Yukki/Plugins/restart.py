@@ -40,8 +40,8 @@ async def restart_server(_, message):
     os.system(f"kill -9 {os.getpid()} && python3 -m Yukki")
 
 
-@app.on_message(filters.command("mupdate") & filters.user(SUDOERS))
-async def mupdate_bot(_, message):
+@app.on_message(filters.command("update") & filters.user(SUDOERS))
+async def update_bot(_, message):
     m = subprocess.check_output(["git", "pull"]).decode("UTF-8")
     if str(m[0]) != "A":
         x = await message.reply_text("update found, pushing now !")
