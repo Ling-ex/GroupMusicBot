@@ -34,7 +34,7 @@ pstart_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴀ ɢʀᴏᴜᴘ ➕", url="https://t.me/Ling_Musik_Bot?startgroup=true")
+                        "➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴀ ɢʀᴏᴜᴘ ➕", url="https://t.me/{bu}?startgroup=true")
                 ],[
                     InlineKeyboardButton(
                         "📚 ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅꜱ", url="https://telegra.ph/HYPER-ROBOT-01-12-2"),
@@ -115,7 +115,6 @@ async def play(_, message: Message):
 🏷 **Name:** {x["title"]}
 ⏱ **Duration:** {round(x["duration"] / 60)} min(s)
 👀 **Views:** `{x["view_count"]}`
-👍🏻 **Likes:** `{x["like_count"]}`
 ⭐️ **Ratings:** {x["average_rating"]}
 📣 **Channel:** {x["uploader"]}
 🔗 **Link:** {x["webpage_url"]}
