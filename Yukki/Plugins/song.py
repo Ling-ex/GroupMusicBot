@@ -52,9 +52,6 @@ def time_to_seconds(time):
 @Client.on_message(command(["music", "song"]) & other_filters)
 async def musicdl(_, message: Message):
     await message.delete()
-    chat_id = message.chat.id
-    if not await is_served_chat(chat_id):
-        await message.reply_text(f"❌ **not in allowed chat**\n\nHyper Robot is only for allowed chats. ask any sudo user to allow your chat.\ncheck sudo user list [From Here](https://t.me/{BOT_USERNAME}?start=sudolist)")  
     if message.sender_chat:
         return await message.reply_text("you're an __Anonymous__ Admin !\n\n» revert back to user account from admin rights.")  
     user_id = message.from_user.id
